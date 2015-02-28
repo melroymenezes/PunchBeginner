@@ -1,0 +1,43 @@
+doctype html
+html(lang="en-US")
+  head
+    link(rel="stylesheet", href="stylesheets/style.css")
+  body
+    div#top
+      p#lbltop
+        a(href='/home') Home
+        |         
+        a(href='/about') About
+        |         
+        a(href='/signin') Sign in
+        |         
+        a(href='/signup') Sign up
+    h1
+      b Punch Beginner
+      br
+      | Improve Your Community!
+    div.buttonHolder
+      button.signInButton(
+        type="button"
+        onclick="location.href = '/signin'"
+      ) Sign In
+      button.signUpButton(
+        type="button"
+        href='/signup'
+        onclick="location.href = '/signup'"
+      ) Sign Up
+    br
+    form(id="frmsearch", name="search", method="post")
+      div.search
+        span.label Search for a project here:  
+        input(type="text"
+              name="title"
+              id="txtsearch"
+              placeholder="Search..."
+              required
+              )
+        input(type="submit"
+              value="Search"
+              id="btnsearch"
+              )
+      

@@ -1,8 +1,100 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#top {
+    width: 100%;
+    height: 40px;
+    background: red;
+    border: 5px solid navy;
+    line-height: 2px;
+}
+#lbltop {
+    text-align: right;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;    
 }
 
-a {
-  color: #00B7FF;
+h1 {
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+b {
+    font-size: 50px;
+    font-style: normal;
+}
+
+.buttonHolder{
+    text-align: center;
+}
+
+.signInButton {
+	text-align: center;
+	width: 120px;
+	height: 35px;
+	position: relative;
+	padding: 6px 15px;
+	left: -8px;
+	margin-right: 10px;
+	border: 2px solid #207cca;
+	background: #207cca;
+	color: #fafafa;
+}
+
+.signUpButton {
+	text-align: center;
+	width: 120px;
+	height: 35px;
+	position: relative;
+	padding: 6px 15px;
+	left: -8px;
+	border: 2px solid #207cca;
+	background: #207cca;
+	color: #fafafa;
+}
+
+.signInButton:hover {
+	background-color: #fafafa;
+	color: #207cca;
+}
+
+.signUpButton:hover {
+	background-color: #fafafa;
+	color: #207cca;
+}
+
+.label {
+	font-size: 20px;
+}
+
+
+.search {
+	text-align: center;
+	padding: 8px 15px;
+	background: rgba(50, 50, 50, 0.2);
+	border: 0px solid #dbdbdb;
+}
+
+#btnsearch {
+	position: relative;
+	padding: 6px 15px;
+	left: -8px;
+	border: 2px solid #207cca;
+	background: #207cca;
+	color: #fafafa;
+}
+
+#txtsearch {
+	margin-right: 20px;
+	width: 250px;
+	height: 25px;
+}
+
+#frmsearch {
+	width:600px;
+	margin:25px auto;
+}
+
+#btnsearch:hover {
+	background-color: #fafafa;
+	color: #207cca;
 }
