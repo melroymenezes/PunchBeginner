@@ -12,17 +12,20 @@ html(lang="en-US")
         a(href='/signin') Sign in
         |         
         a(href='/signup') Sign up
-    h1
-      b Punch Beginner
-      br
-      | Improve Your Community!
+    div#head
+      h1
+        b Community Fund
+        br
+        | Improve Your Community!
     div.buttonHolder
       button.signInButton(
         type="button"
+        title="Sign in to create or view your fundraising project"
         onclick="location.href = '/signin'"
       ) Sign In
       button.signUpButton(
         type="button"
+        title="Sign up for a free account!"
         href='/signup'
         onclick="location.href = '/signup'"
       ) Sign Up
@@ -40,4 +43,48 @@ html(lang="en-US")
               value="Search"
               id="btnsearch"
               )
-      
+    div#pics
+      h2
+        | Project Title
+      div.photobanner
+        img.first(src='/images/p1.jpg' 
+          alt="pun1"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p2.jpg' 
+          alt="pun2"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p3.jpg' 
+          alt="pun3"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p4.jpg' 
+          alt="pun4"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p5.jpg' 
+          alt="pun5"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p6.jpg' 
+          alt="pun6"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p1.jpg' 
+          alt="pun1"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p2.jpg' 
+          alt="pun2"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p3.jpg' 
+          alt="pun3"
+          style="width: 350px; height: 233px"
+        )
+        img(src='/images/p4.jpg' 
+          alt="pun4"
+          style="width: 350px; height: 233px"
+        )
+    
