@@ -1,0 +1,41 @@
+doctype html
+html(lang="en-US")
+	head
+		link(rel="stylesheet", href="stylesheets/style.css")
+	body
+		div#container.center
+			h1 
+				| Create an account
+			form(id="accInfo" name="accInfo" method="post")
+				input(type="text"
+							name="email"
+							placeholder="email"
+							required
+							)
+				br
+				input(type="text"
+							name="username"
+							placeholder="username"
+							required
+							)
+				br
+				input(type="password"
+							name="password"
+							placeholder="password"
+							required
+							)
+				br
+				input(type="password"
+							name="password2"
+							placeholder="password confirmation"
+							required
+							)
+				input(type="submit"
+							name="signup"
+							value="Sign up"
+							id="btnsignUp"
+							)
+		div#loginInstead
+			p
+				| Already a member? 
+				a(href="/login") Log in instead

@@ -1,7 +1,7 @@
 doctype html
 html(lang="en-US")
   head
-    link(rel="stylesheet", href="stylesheets/style.css")
+    link(rel="stylesheet", href="stylesheets/main.css")
   body
     div#top
       p#lbltop
@@ -9,7 +9,7 @@ html(lang="en-US")
         |         
         a(href='/about') About
         |         
-        a(href='/signin') Sign in
+        a(href='/login') Log in
         |         
         a(href='/signup') Sign up
     div#head
@@ -18,11 +18,11 @@ html(lang="en-US")
         br
         | Improve Your Community!
     div.buttonHolder
-      button.signInButton(
+      button.logInButton(
         type="button"
-        title="Sign in to create or view your fundraising project"
-        onclick="location.href = '/signin'"
-      ) Sign In
+        title="Log in to create or view your fundraising project"
+        onclick="location.href = '/login'"
+      ) Log In
       button.signUpButton(
         type="button"
         title="Sign up for a free account!"

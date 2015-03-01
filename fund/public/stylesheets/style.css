@@ -1,222 +1,71 @@
-#top {
-    width: 100%;
-    height: 40px;
-    background: #B80000;
-    border: 5px solid navy;
-    line-height: 2px;
+body {
+	background: #B8E6B8;
 }
 
-#head {
+#container {
+	width: 350px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: auto;
+    margin-top: 100px;
+    height: 280px;
+}
+
+h1 {
 	text-align: center;
-    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-    font-size: 25px;
-    font-style: italic;
-    background-color: #B8E6B8;
-}
-#lbltop {
-    text-align: right;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 20px;    
-}
-
-b {
-    font-size: 50px;
-    font-style: normal;
-}
-
-.buttonHolder{
-    text-align: center;
-}
-
-.signInButton {
-	text-align: center;
-	font-size: 20px;
-	width: 150px;
-	height: 45px;
-	position: relative;
-	padding: 6px 15px;
-	left: -8px;
-	margin-right: 10px;
-	border: 2px solid #207cca;
-	background: #207cca;
-	color: #fafafa;
-}
-
-.signUpButton {
-	text-align: center;
-	font-size: 20px;
-	width: 150px;
-	height: 45px;
-	position: relative;
-	padding: 6px 15px;
-	left: -8px;
-	border: 2px solid #207cca;
-	background: #207cca;
-	color: #fafafa;
-}
-
-#btnsearch {
-	text-align: center;
-	position: relative;
-	font-size: 16px;
-	width: 100px;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	
+	/*background-color: #D8D8D8;
 	height: 40px;
+	width: auto;
+	line-height: 35px;
+	border: 2px solid black;
+	*/
+}
+
+input[type=text], [type=password] {
+	margin-top: 5px;
+	width: 344px;
+	height: 25px;
+	color: #404040;
+	background: white;
+}
+
+#btnsignUp {
+	text-align: center;
+	line-height: 20px;
+	font-size: 20px;
+	width: 100px;
+	height: 35px;
+	position: relative;
 	padding: 6px 15px;
-	left: -8px;
+	float: right;
+	margin-top: 15px;
 	border: 2px solid #207cca;
 	background: #207cca;
 	color: #fafafa;
 }
 
-.signInButton:hover {
+#btnsignUp:hover {
 	background-color: #fafafa;
 	color: #207cca;
 	cursor: pointer; 
 	cursor: hand;
 }
 
-.signUpButton:hover {
-	background-color: #fafafa;
-	color: #207cca;
-	cursor: pointer; 
-	cursor: hand;
+#loginInstead {
+	width: 350px;
+    margin: auto;
+    margin-top: 10px;
 }
 
-.label {
-	font-size: 20px;
+p {
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    font-size: 14px;
 }
 
-
-.search {
-	text-align: center;
-	padding: 8px 15px;
-	background: rgba(50, 50, 50, 0.2);
-	border: 0px solid #dbdbdb;
+a{
+	font-style: italic;
 }
-
-
-#txtsearch {
-	margin-right: 20px;
-	width: 250px;
-	height: 25px;
-}
-
-#frmsearch {
-	width:625px;
-	margin:15px auto;
-}
-
-#btnsearch:hover {
-	background-color: #fafafa;
-	color: #207cca;
-	cursor: pointer; 
-	cursor: hand;
-}
-
-h2 {
-	font-size: 36px;
-	text-align: center;
-}
-
-#pics {
-	width: 1000px;
-	overflow: hidden;
-	margin: 50px auto;
-	background: white;
-	background-color: #B8E6B8;
-}
-
-.photobanner {
-	height: 233px;
-	width: 3550px;
-	margin-bottom: 80px;
-}
-
-
-
-
-
-/*keyframe animations*/
-.first {
-	-webkit-animation: bannermove 30s linear infinite;
-       -moz-animation: bannermove 30s linear infinite;
-        -ms-animation: bannermove 30s linear infinite;
-         -o-animation: bannermove 30s linear infinite;
-            animation: bannermove 30s linear infinite;
-}
- 
-@keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -2125px;
- }
-}
- 
-@-moz-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-}
- 
-@-webkit-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-}
- 
-@-ms-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-}
- 
-@-o-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
-}
-
-
-
-
-.photobanner {
-    height: 233px;
-    width: 3550px;
-    margin-bottom: 80px;
-}
- 
-.photobanner img {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
- 
-.photobanner img:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    cursor: pointer;
- 
-    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-}
-
