@@ -14,4 +14,12 @@ router.get('/signup', function(req, res, next) {
 	res.render('signup');
 });
 
+router.get('/login', function(req, res, next) {
+	res.render('login');
+});
+
+router.get('/project', function(req, res, next) {
+	res.render('project');
+});
+
 module.exports = router;

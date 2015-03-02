@@ -25,6 +25,21 @@ h1 {
 	*/
 }
 
+button{
+	text-align: center;
+	line-height: 20px;
+	font-size: 20px;
+	width: 100px;
+	height: 35px;
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-right:15px;
+	border: 2px solid black;
+	background: #207cca;
+}
+
 input[type=text], [type=password] {
 	margin-top: 5px;
 	width: 344px;
