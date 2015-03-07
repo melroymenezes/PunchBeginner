@@ -40,7 +40,8 @@ button{
 	background: #207cca;
 }
 
-input[type=text], [type=password] {
+input[type=text], [type=password], [type=date], [type=email]
+ {
 	margin-top: 5px;
 	width: 344px;
 	height: 25px;
@@ -48,7 +49,12 @@ input[type=text], [type=password] {
 	background: white;
 }
 
-#btnsignUp {
+#projdetails {
+	margin-top: 5px;
+}
+
+/*Log in and Sign up buttons */
+.logInSignUpCreate{
 	text-align: center;
 	line-height: 20px;
 	font-size: 20px;
@@ -63,7 +69,7 @@ input[type=text], [type=password] {
 	color: #fafafa;
 }
 
-#btnsignUp:hover {
+.logInSignUpCreate:hover{
 	background-color: #fafafa;
 	color: #207cca;
 	cursor: pointer; 
@@ -84,3 +90,4 @@ p {
 a{
 	font-style: italic;
 }
+

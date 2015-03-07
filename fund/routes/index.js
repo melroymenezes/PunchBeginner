@@ -22,4 +22,8 @@ router.get('/project', function(req, res, next) {
 	res.render('project');
 });
 
+router.get('/createproject', function(req, res, next) {
+	res.render('createproject');
+});
+
 module.exports = router;
