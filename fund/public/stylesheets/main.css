@@ -120,9 +120,22 @@ b {
 	cursor: hand;
 }
 
+body {
+	background-image: url("/images/bg.png");
+}
+
 h2 {
-	font-size: 36px;
 	text-align: center;
+	font-size: 64px;
+	font-weight: bold;
+	font-family: "Futura", "Helvetica", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	
+	/*background-color: #D8D8D8;
+	height: 40px;
+	width: auto;
+	line-height: 35px;
+	border: 2px solid black;
+	*/
 }
 
 #pics {
