@@ -40,8 +40,7 @@ button{
 	background: #207cca;
 }
 
-input[type=text], [type=password], [type=date], [type=email]
- {
+input[type=text], [type=password] {
 	margin-top: 5px;
 	width: 344px;
 	height: 25px;
