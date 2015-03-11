@@ -1,13 +1,15 @@
 doctype html
 html(lang="en-US")
 	head
+		title=title
 		link(rel="stylesheet", href="stylesheets/style.css")
+		link(rel="stylesheet", href="stylesheets/main.css")
 	body
 		div#container.center
 			h1 
 				| Create an account
-			form(id="accInfo" name="accInfo" method="post")
-				input(type="email"
+			form(id="accInfo" name="accInfo" method="post", action='/signup')
+				input(type="text"
 							name="email"
 							placeholder="email"
 							required
