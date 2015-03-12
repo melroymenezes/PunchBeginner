@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-	
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Community Fund' });
@@ -81,19 +81,52 @@ router.get('/createproject', function(req, res, next) {
 	res.render('createproject', { title: 'Create Project' });
 });
 
-router.get('/userlist', function(req, res) {
-	var db = req.db;
-	var collection = db.get('usercollection');
-	collection.find({}, {}, function(e, docs) {
-		res.render('userlist', 
-			{ "userlist" : docs
-		});
-	});
-	
-});
+router.post('/createproject', function(req, res) {
+	var proj_title = req.body.projtitle;
+	var name1 = req.body.firstname;
+	var name2 = req.body.lastname;
+	var projdetails = req.body.projdetails;
+	var deadline = req.body.deadline;
+	var goal = req.body.goal;
 
-router.get('/temp', function(req, res) {
-	res.render('temp', {scripts: ['javascripts/temp.js']});
+	if (!projdetails){
+		projdetails = "";
+	}
+	var db = req.db;
+
+	var counters = db.get('counters');
+	var pid;
+	counters.findOne({name:"projects"},	function(err, result) {
+		if (err || !result) {
+			console.log("error or result=null")
+		} else {
+			pid = result.counter+1;
+			console.log("pid="+pid)
+
+			var projects = db.get('projects');
+			projects.insert({
+				"pid":pid,
+				"proj_title":proj_title,
+				"proj_details":projdetails,
+				"deadline":deadline,
+				"goal":goal,
+				"currentFunds":0
+			}, function(err, docs){
+				if (err) {
+					//res.send("There was a problem adding the information to the database.");
+				}
+				else {
+					//console.log("added " + proj_title + " pid="+pid);
+					res.location('home');
+					res.redirect('home');
+				}
+			});
+		}
+	});
+
+	counters.update({name:"projects"}, {$inc:{counter:1}}, function(err,result) {
+		if (err) console.err(err);
+	});
 });
 
 module.exports = router;
