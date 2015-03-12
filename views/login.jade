@@ -4,16 +4,28 @@ html(lang="en-US")
 		title=title
 		link(rel="stylesheet", href="stylesheets/style.css")
 		link(rel="stylesheet", href="stylesheets/main.css")
-	body
+		script(type="text/javascript", src="javascripts/login.js")
+	body(onload="checkError()")
 		div#container.center
-			h1
+			h1 
 				| Log in
-			form(id="login" name="login" method="post")
-				input(type="text" name="username" 
-					placeholder="username" required)
-			br
-			input(type="password" name="password"
-					placeholder="password" required)
-			br
-			input(type="submit" name="login" value="Log in"
-					id="btnLogIn" class="logInSignUpCreate")
+			p(id="errMessage")
+				| Insert username and password below.
+			form(id="accInfoLog" name="accInfoLog" method="post", action='/login')
+				input(type="text"
+							name="username"
+							placeholder="username"
+							required
+							)
+				br
+				input(type="password"
+							name="password"
+							placeholder="password"
+							required
+							)
+				input(type="submit"
+							name="login"
+							value="Log in"
+							id="btnLogin"
+							class="logInSignUpCreate"
+							)

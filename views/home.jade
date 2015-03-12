@@ -3,7 +3,8 @@ html(lang="en-US")
   head
     title=title
     link(rel="stylesheet", href="stylesheets/main.css")
-  body
+    script(type="text/javascript", src="javascripts/home.js")
+  body(onload="loadUsername()")
     div#top
       p#lbltopleft
         a(href='/home') Punch Beginner
@@ -11,9 +12,10 @@ html(lang="en-US")
         a(href='/createproject') Create Project
       p#lbltopright
         |         
-        a(href='/login') Log in
+        a#logstatus(href='/login') Log in
         |         
-        a(href='/signup') Sign up
+        a#sign(href='/signup') Sign up
+      p(id='lbltopmid') Not logged in
     div#head
       h1
         b Community Fund

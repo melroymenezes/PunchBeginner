@@ -1,9 +1,11 @@
-extends layout
-
-block content
-	h1
-		User List
-	ul
-		each user, i in temp
-			li
-				a(href='mailto:#{user.email}') = user.username
+doctype html
+html(lang="en-US")
+	head
+		title=title
+		link(rel="stylesheet", href="stylesheets/main.css")
+		script(src='javascripts/temp.js')
+	body(onload='loadUsername()')
+		h1(id="username") Username
+		a(href='home') To home
+		br
+		button(onclick='doSomething()') Click
