@@ -81,6 +81,12 @@ input[type=text], [type=password] {
     margin-top: 10px;
 }
 
+#signupInstead {
+	width: 350px;
+    margin: auto;
+    margin-top: 10px;
+}
+
 p {
 	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
     font-size: 14px;
