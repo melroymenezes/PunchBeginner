@@ -24,7 +24,7 @@ router.post('/signup', function(req, res, currentUser) {
 		var password = req.body.password
 		
 		var collection = db.get('usercollection');
-		collection.createIndex({username:1}, {unique:true});
+		//collection.createIndex({username:1}, {unique:true});
 		
 		collection.insert({
 			"username" : username,
