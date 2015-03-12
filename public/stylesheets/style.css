@@ -94,5 +94,11 @@ p {
 
 a{
 	font-style: italic;
+	color: #9999ff
+}
+
+a:visited{
+	font-style: italic;
+	color: #cc99ff
 }
 
