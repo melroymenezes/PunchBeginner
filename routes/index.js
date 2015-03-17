@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var querystring = require('querystring');
+var url = require('url');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -73,9 +75,36 @@ router.post('/login', function(req, res) {
 	});
 });
 
-router.get('/project', function(req, res, next) {
-	res.render('project', { title: 'Project' });
-});
+var loadProject = function(req, res) {
+	var parts = url.parse(req.originalUrl, true);
+	delete parts.search;
+	var pid = parts.query['pid'];
+	var db=req.db;
+	var collection = db.get("projects");
+
+	if (typeof(pid) != undefined) {
+		collection.findOne({"pid":parseInt(pid)}, function(err, project) {
+			if (err) {
+				res.render('project', {title:'Error'});
+			} else if (!project){
+				res.render('project', {title:"No such project"});
+			} else {
+				res.render('project', {
+					title:project.proj_title, 
+					projtitle:project.proj_title,
+					projdesc:project.proj_details,
+					projdeadline:project.deadline,
+					projgoal:project.goal,
+					projcurfunds:project.currentFunds
+				});
+			}
+		});
+	} else {
+		res.render('project');
+	}
+
+}
+router.get('/project',loadProject);
 
 router.get('/createproject', function(req, res, next) {
 	res.render('createproject', { title: 'Create Project' });
@@ -97,11 +126,19 @@ router.post('/createproject', function(req, res) {
 	var counters = db.get('counters');
 	var pid;
 	counters.findOne({name:"projects"},	function(err, result) {
-		if (err || !result) {
-			console.log("error or result=null")
+		if (err) {
+			console.err(err);
+		} else if (!result){
+			pid = 0
+			counters.insert({"name":"projects","counter":1});
+			res.redirect("createproject");
 		} else {
 			pid = result.counter+1;
 			console.log("pid="+pid)
+			
+			counters.update({name:"projects"}, {$inc:{counter:1}}, function(err,result) {
+				if (err) console.err(err);
+			});
 
 			var projects = db.get('projects');
 			projects.insert({
@@ -124,9 +161,6 @@ router.post('/createproject', function(req, res) {
 		}
 	});
 
-	counters.update({name:"projects"}, {$inc:{counter:1}}, function(err,result) {
-		if (err) console.err(err);
-	});
 });
 
 module.exports = router;

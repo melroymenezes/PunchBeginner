@@ -5,23 +5,19 @@ html(lang="en-US")
 		link(rel="stylesheet", href="stylesheets/style.css")
 		
 	body
-		h1(id="projtitle")
-			| Project Title here
+		h1 #{projtitle}
 		
-		p(id="desc")
-			| Lots of text here
+		p #{projdesc}
 			
 		img(id="projpic" src='/images/p1.jpg' alt="pun2" 
 			style="width: 350px; height: 233px")
 		
-		p(id="projloc")
+		p
 			| Location:
-		
-		p(id="projdeadline")
-			| Deadline:
+
+		p Deadline: #{projdeadline}	
 			
-		p(id="projfunds")
-			| Amount Raised: $x of y
+		p Amount Raised: $#{projcurfunds} of $#{projgoal}
 		
 		p(id="projrate")
 			| Rating:
