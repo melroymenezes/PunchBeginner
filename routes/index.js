@@ -9,7 +9,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/home', function(req, res) {
-	res.render('home', { title: 'PunchBeginner' });
+	if (req.session && req.session.user) {
+		res.render('home', {title: 'PunchBeginner',
+							currentUser: req.session.user});
+	} else {
+		res.render('home', { title: 'PunchBeginner',
+							currentUser: "Not logged in." });
+	}
+	
 });
 
 
@@ -37,7 +44,8 @@ router.post('/signup', function(req, res, currentUser) {
 				res.send("There was a problem adding the information to the database.");
 			}
 			else {
-				res.cookie('username', username);
+				//res.cookie('username', username);
+				req.session.user = username;
 				res.location('home');
 				res.redirect('home');
 			}
@@ -49,7 +57,6 @@ router.post('/signup', function(req, res, currentUser) {
 });
 
 router.get('/login', function(req, res, next) {
-	res.cookie('error', "none");
 	res.render('login', { title: 'Login' });
 });
 
@@ -60,15 +67,14 @@ router.post('/login', function(req, res) {
 	var userslist = db.get('usercollection');
 	userslist.findOne({username:user_name},	function(err, user) {
 		if (err || !user) {
-			res.cookie('error', "not exist")
 			res.redirect("login");
 		} else {
 			if (user.password == password){
-				res.cookie('username', user_name);
+				//res.cookie('username', user_name);
+				req.session.user = user_name;
 				res.location('home');
 				res.redirect('home');	
 			} else {
-				res.cookie('error', "incorrect")
 				res.redirect("login");	
 			}
 		}
