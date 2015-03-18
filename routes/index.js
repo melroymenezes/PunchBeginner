@@ -11,10 +11,12 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res) {
 	if (req.session && req.session.user) {
 		res.render('home', {title: 'PunchBeginner',
-							currentUser: req.session.user});
+							currentUser: req.session.user,
+							scripts: ["javascripts/home.js"] });
 	} else {
 		res.render('home', { title: 'PunchBeginner',
-							currentUser: "Not logged in." });
+							currentUser: "Not logged in." ,
+							scripts: ["javascripts/home.js"] });
 	}
 	
 });
@@ -167,6 +169,17 @@ router.post('/createproject', function(req, res) {
 		}
 	});
 
+});
+
+router.get('/logout', function(req, res) {
+	req.session.user = null;
+	/*
+	res.render('home', { title: 'PunchBeginner',
+						 currentUser: "Not logged in.",
+						 scripts: ["javascripts/home.js"] }, );
+	*/
+	res.location('home');
+	res.redirect('home');
 });
 
 module.exports = router;

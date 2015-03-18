@@ -3,18 +3,21 @@ html(lang="en-US")
   head
     title=title
     link(rel="stylesheet", href="stylesheets/main.css")
-  body(onload="loadUsername()")
+    - each s in scripts
+      script(type="text/javascript" src=s)
+  body(onload="loadUser('#{currentUser}')")
     div#top
       p#lbltopleft
         a(href='/home') Punch Beginner
         |         
         a(href='/createproject') Create Project
+      p#lbltopmid 
+        | #{currentUser}
       p#lbltopright
         |         
         a#logstatus(href='/login') Log in
         |         
         a#sign(href='/signup') Sign up
-      p#lbltopmid #{currentUser}
     div#head
       h1
         b Community Fund
@@ -22,11 +25,13 @@ html(lang="en-US")
         | Improve Your Community!
     div.buttonHolder
       button.logInButton(
+        id="btnLogin"
         type="button"
         title="Log in to create or view your fundraising project"
         onclick="location.href = '/login'"
       ) Log In
       button.signUpButton(
+        id="btnSignup"
         type="button"
         title="Sign up for a free account!"
         href='/signup'
@@ -90,4 +95,3 @@ html(lang="en-US")
           alt="pun4"
           style="width: 350px; height: 233px"
         )
-    
