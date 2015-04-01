@@ -12,11 +12,13 @@ router.get('/home', function(req, res) {
 	if (req.session && req.session.user) {
 		res.render('home', {title: 'PunchBeginner',
 							currentUser: req.session.user,
-							scripts: ["javascripts/home.js"] });
+							logstat: '/logout',
+							logmsg: 'Log out' });
 	} else {
 		res.render('home', { title: 'PunchBeginner',
 							currentUser: "Not logged in." ,
-							scripts: ["javascripts/home.js"] });
+							logstat: '/login',
+							logmsg: 'Log in' });
 	}
 	
 });

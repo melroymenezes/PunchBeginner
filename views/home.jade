@@ -3,9 +3,7 @@ html(lang="en-US")
   head
     title=title
     link(rel="stylesheet", href="stylesheets/main.css")
-    - each s in scripts
-      script(type="text/javascript" src=s)
-  body(onload="loadUser('#{currentUser}')")
+  body
     div#top
       p#lbltopleft
         a(href='/home') Punch Beginner
@@ -15,7 +13,7 @@ html(lang="en-US")
         | #{currentUser}
       p#lbltopright
         |         
-        a#logstatus(href='/login') Log in
+        a#logstatus(href='#{logstat}') #{logstat}
         |         
         a#sign(href='/signup') Sign up
     div#head
@@ -27,9 +25,9 @@ html(lang="en-US")
       button.logInButton(
         id="btnLogin"
         type="button"
-        title="Log in to create or view your fundraising project"
-        onclick="location.href = '/login'"
-      ) Log In
+        title="#{logmsg}"
+        onclick="location.href = '#{logstat}'"
+      ) #{logmsg}
       button.signUpButton(
         id="btnSignup"
         type="button"
@@ -51,47 +49,3 @@ html(lang="en-US")
               value="Search"
               id="btnsearch"
               )
-    div#pics
-      h2
-        | Project Title
-      div.photobanner
-        img.first(src='/images/p1.jpg' 
-          alt="pun1"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p2.jpg' 
-          alt="pun2"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p3.jpg' 
-          alt="pun3"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p4.jpg' 
-          alt="pun4"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p5.jpg' 
-          alt="pun5"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p6.jpg' 
-          alt="pun6"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p1.jpg' 
-          alt="pun1"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p2.jpg' 
-          alt="pun2"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p3.jpg' 
-          alt="pun3"
-          style="width: 350px; height: 233px"
-        )
-        img(src='/images/p4.jpg' 
-          alt="pun4"
-          style="width: 350px; height: 233px"
-        )

@@ -3,7 +3,7 @@ function loadUser(currentUser) {
 		document.getElementById("btnLogin").disabled=true;
 		document.getElementById("btnSignup").disabled=true;
 	} else {
-		document.getElementById("btnLogin").disabled=false;
-		document.getElementById("btnSignup").disabled=false;
+		document.getElementById("btnLogin").disabled=true;
+		document.getElementById("btnSignup").disabled=true;
 	}
 }
